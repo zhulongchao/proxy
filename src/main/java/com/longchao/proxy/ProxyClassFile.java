@@ -17,22 +17,22 @@ import java.io.IOException;
  */
 public class ProxyClassFile {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         String proxyName = "UserServiceProxy";
 
         UserService a = new UserServiceImpl();
-        Class[] interfaces =  a.getClass().getInterfaces();
+        Class[] interfaces = a.getClass().getInterfaces();
         byte[] bytes = ProxyGenerator.generateProxyClass(proxyName, interfaces);
-        File f  = new File("D:/work/code/middleware/study/proxy/UserServiceProxy.class");
-        try{
+        File f = new File("D:/work/code/middleware/study/proxy/UserServiceProxy.class");
+        try {
             FileOutputStream fos = new FileOutputStream(f);
             fos.write(bytes);
             fos.flush();
             fos.close();
-        }catch(FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }catch(IOException e1){
+        } catch (IOException e1) {
             e1.printStackTrace();
         }
 

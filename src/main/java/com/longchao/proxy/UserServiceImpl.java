@@ -10,6 +10,6 @@ package com.longchao.proxy;
  */
 public class UserServiceImpl implements UserService {
     public void addUser(long cardId) {
-        System.out.println("cardId>>>>>"+cardId);
+        System.out.println("cardId>>>>>" + cardId);
     }
 }
